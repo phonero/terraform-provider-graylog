@@ -7,7 +7,8 @@
 
 * `username` - (Required, Forces new resource) The data type is `string`.
 * `email` - (Required) The data type is `string`.
-* `full_name` - (Required) The data type is `string`.
+* `first_name` - (Required) The data type is `string`.
+* `last_name` - (Required) The data type is `string`.
 * `password` - (Optonal, Sensitive) The data type is `string`.
 * `roles` - (Optional) The data type is `set of string`.
 * `timezone` - (Optional, Computed) The data type is `string`.
