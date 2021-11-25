@@ -51,7 +51,8 @@ func TestAccUser(t *testing.T) {
   "username": "test",
   "email": "test@example.com",
   "password": "password",
-  "full_name": "test test",
+  "first_name": "first_name",
+	"last_name": "last_name",
   "timezone": "",
   "session_timeout_ms": 3600000,
   "roles": ["Reader"],
@@ -62,7 +63,8 @@ func TestAccUser(t *testing.T) {
   "id": "5ea23d422ab79c001251dbfa",
   "username": "test",
   "email": "test@example.com",
-  "full_name": "test test",
+  "first_name": "first_name",
+	"last_name": "last_name",
   "permissions": [
     "users:edit:test",
     "users:passwordchange:test",
@@ -119,10 +121,11 @@ func TestAccUser(t *testing.T) {
 		},
 		Config: `
 resource "graylog_user" "test" {
-  username  = "test"
-  email     = "test@example.com"
-  password  = "password"
-  full_name = "test test"
+  username   = "test"
+  email      = "test@example.com"
+  password   = "password"
+  first_name = "first_name"
+  last_name  = "last_name"
   roles = [
     "Reader",
   ]
@@ -132,7 +135,8 @@ resource "graylog_user" "test" {
 			resource.TestCheckResourceAttr("graylog_user.test", "username", "test"),
 			resource.TestCheckResourceAttr("graylog_user.test", "email", "test@example.com"),
 			resource.TestCheckResourceAttr("graylog_user.test", "password", "password"),
-			resource.TestCheckResourceAttr("graylog_user.test", "full_name", "test test"),
+			resource.TestCheckResourceAttr("graylog_user.test", "first_name", "first_name"),
+			resource.TestCheckResourceAttr("graylog_user.test", "last_name", "last_name"),
 		),
 	}
 
@@ -150,7 +154,7 @@ resource "graylog_user" "test" {
 					t.Fatal(err)
 				}
 				keys := []string{
-					"email", "password", "full_name", "roles", "permissions",
+					"email", "password", "first_name", "last_name", "roles", "permissions",
 					"session_timeout_ms", "username", "timezone",
 				}
 				if err := testutil.EqualMapKeys(body, keys...); err != nil {
@@ -158,14 +162,16 @@ resource "graylog_user" "test" {
 				}
 				require.Equal(t, "test@example.com", body["email"])
 				require.Equal(t, "password", body["password"])
-				require.Equal(t, "test test updated", body["full_name"])
+				require.Equal(t, "first_name updated", body["first_name"])
+				require.Equal(t, "last_name updated", body["last_name"])
 				require.Equal(t, []interface{}{"Reader"}, body["roles"])
 
 				userBody = `{
   "id": "5ea23d422ab79c001251dbfa",
   "username": "test",
   "email": "test@example.com",
-  "full_name": "test test updated",
+  "first_name": "first_name updated",
+  "last_name": "last_name updated",
   "permissions": [
     "users:edit:test",
     "users:passwordchange:test",
@@ -238,10 +244,11 @@ resource "graylog_user" "test" {
 		},
 		Config: `
 resource "graylog_user" "test" {
-  username  = "test"
-  email     = "test@example.com"
-  password  = "password"
-  full_name = "test test updated"
+  username   = "test"
+  email      = "test@example.com"
+  password   = "password"
+  first_name = "first_name updated"
+  last_name  = "last_name updated"
   roles = [
     "Reader",
   ]
@@ -251,7 +258,8 @@ resource "graylog_user" "test" {
 			resource.TestCheckResourceAttr("graylog_user.test", "username", "test"),
 			resource.TestCheckResourceAttr("graylog_user.test", "email", "test@example.com"),
 			resource.TestCheckResourceAttr("graylog_user.test", "password", "password"),
-			resource.TestCheckResourceAttr("graylog_user.test", "full_name", "test test updated"),
+			resource.TestCheckResourceAttr("graylog_user.test", "first_name", "first_name updated"),
+			resource.TestCheckResourceAttr("graylog_user.test", "last_name", "last_name updated"),
 		),
 	}
 
