@@ -52,7 +52,7 @@ func TestAccUser(t *testing.T) {
   "email": "test@example.com",
   "password": "password",
   "first_name": "first_name",
-	"last_name": "last_name",
+  "last_name": "last_name",
   "timezone": "",
   "session_timeout_ms": 3600000,
   "roles": ["Reader"],
