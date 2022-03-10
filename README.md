@@ -1,10 +1,20 @@
 # terraform-provider-graylog
 
-[![Build Status](https://github.com/terraform-provider-graylog/terraform-provider-graylog/workflows/CI/badge.svg)](https://github.com/terraform-provider-graylog/terraform-provider-graylog/actions)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/68758b442c809c2fe7cf/test_coverage)](https://codeclimate.com/github/terraform-provider-graylog/terraform-provider-graylog/test_coverage)
-[![Go Report Card](https://goreportcard.com/badge/github.com/terraform-provider-graylog/terraform-provider-graylog)](https://goreportcard.com/report/github.com/terraform-provider-graylog/terraform-provider-graylog)
-[![GitHub last commit](https://img.shields.io/github/last-commit/terraform-provider-graylog/terraform-provider-graylog.svg)](https://github.com/terraform-provider-graylog/terraform-provider-graylog)
-[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://raw.githubusercontent.com/terraform-provider-graylog/terraform-provider-graylog/master/LICENSE)
+This repo is a fork of [terraform-provider-graylog](https://github.com/terraform-provider-graylog/terraform-provider-graylog)
+with a couple of fixes to make it work with Graylog 4.1 and higher, by replacing the
+`full_name` field with with `first_name` and `last_name`.
+
+Linking to the upstream repos docs on registry.terraform.io below.
+
+It can be used from Terraform with the following configuration.
+```hcl
+    graylog = {
+      source  = "phonero.github.io/phonero/graylog"
+      version = "1.1.0"
+    }
+```
+
+As this repo exists primarily for our own usage, PR's might be ignored.
 
 Terraform Provider for [Graylog](https://docs.graylog.org/)
 
