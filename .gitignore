@@ -6,4 +6,5 @@
 coverage.txt
 profile.txt
 dist
-.goreleaser.yml
+
+dist/
