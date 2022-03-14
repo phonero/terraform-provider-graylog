@@ -1,4 +1,4 @@
-project_name: terraform_provider_graylog
+project_name: terraform-provider-graylog
 # Visit https://goreleaser.com for documentation on how to customize this
 # behavior.
 before:
