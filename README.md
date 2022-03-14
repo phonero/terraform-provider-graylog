@@ -1,6 +1,6 @@
 # terraform-provider-graylog
 
-This repo is a fork of [terraform-provider-graylog](https://github.com/terraform-provider-graylog/terraform-provider-graylog)
+This repo is a fork of [terraform-provider-graylog](https://github.com/phonero/terraform-provider-graylog)
 with a couple of fixes to make it work with Graylog 4.1 and higher, by replacing the
 `full_name` field with with `first_name` and `last_name`.
 
