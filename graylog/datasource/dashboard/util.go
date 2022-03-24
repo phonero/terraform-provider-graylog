@@ -2,9 +2,9 @@ package dashboard
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/terraform-provider-graylog/terraform-provider-graylog/graylog/convert"
-	"github.com/terraform-provider-graylog/terraform-provider-graylog/graylog/resource/dashboard"
-	"github.com/terraform-provider-graylog/terraform-provider-graylog/graylog/util"
+	"github.com/phonero/terraform-provider-graylog/graylog/convert"
+	"github.com/phonero/terraform-provider-graylog/graylog/resource/dashboard"
+	"github.com/phonero/terraform-provider-graylog/graylog/util"
 )
 
 const (

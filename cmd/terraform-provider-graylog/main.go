@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"github.com/terraform-provider-graylog/terraform-provider-graylog/graylog"
+	"github.com/phonero/terraform-provider-graylog/graylog"
 )
 
 func main() {

@@ -15,7 +15,7 @@ if [ $# -eq 0 ]; then
   if [ "$target" = "" ]; then
     exit 0
   fi
-  target="${target#github.com/terraform-provider-graylog/terraform-provider-graylog/}"
+  target="${target#github.com/phonero/terraform-provider-graylog/}"
 elif [ $# -eq 1 ]; then
   target="graylog/$1"
 else
